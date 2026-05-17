@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Large social preview SVG (1280x640) — wordless cyberpunk composition -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="Social preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0%" stop-color="#060308" />
+      <stop offset="100%" stop-color="#0a0710" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0%" stop-color="#00ffd1" />
+      <stop offset="50%" stop-color="#8bf0ff" />
+      <stop offset="100%" stop-color="#ff3fb1" />
+    </linearGradient>
+    <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg)" />
+
+  <!-- abstract grid and scan lines -->
+  <g opacity="0.12">
+    <rect x="60" y="60" width="1160" height="520" fill="none" stroke="#0f1520" stroke-width="1" />
+    <g stroke="#0f1520" stroke-width="1">
+      <line x1="60" y1="120" x2="1220" y2="120" />
+      <line x1="60" y1="180" x2="1220" y2="180" />
+      <line x1="60" y1="240" x2="1220" y2="240" />
+    </g>
+  </g>
+
+  <!-- place wordless emblem on center-left -->
+  <g transform="translate(320,320) scale(2.5)">
+    <use href="/assets/images/brand.svg#" />
+  </g>
+
+  <!-- neon accent shards on right -->
+  <g transform="translate(820,220)">
+    <path d="M0 0 L220 0 L190 180 L0 60 Z" fill="url(#accent)" opacity="0.09" filter="url(#glow2)">
+      <animate attributeName="opacity" values="0.06;0.12;0.06" dur="6s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- subtle floating particles -->
+  <g fill="#8bf0ff" opacity="0.06">
+    <circle cx="200" cy="120" r="2">
+      <animate attributeName="cy" values="120;140;120" dur="8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="480" cy="460" r="3">
+      <animate attributeName="cx" values="480;500;480" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="980" cy="100" r="2">
+      <animate attributeName="cx" values="980;1020;980" dur="9s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+</svg>
